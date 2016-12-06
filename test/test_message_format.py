@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.message_format import MessageFormat
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.message_format import MessageFormat
 
 
 class TestMessageFormat(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestMessageFormat(unittest.TestCase):
         """
         Test MessageFormat
         """
-        model = messagemedia_restapi.models.message_format.MessageFormat()
+        model = messagemedia_rest_api.models.message_format.MessageFormat()
 
 
 if __name__ == '__main__':

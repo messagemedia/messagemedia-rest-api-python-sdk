@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.summary_report_properties import SummaryReportProperties
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.summary_report_properties import SummaryReportProperties
 
 
 class TestSummaryReportProperties(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestSummaryReportProperties(unittest.TestCase):
         """
         Test SummaryReportProperties
         """
-        model = messagemedia_restapi.models.summary_report_properties.SummaryReportProperties()
+        model = messagemedia_rest_api.models.summary_report_properties.SummaryReportProperties()
 
 
 if __name__ == '__main__':

@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.pagination import Pagination
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.pagination import Pagination
 
 
 class TestPagination(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestPagination(unittest.TestCase):
         """
         Test Pagination
         """
-        model = messagemedia_restapi.models.pagination.Pagination()
+        model = messagemedia_rest_api.models.pagination.Pagination()
 
 
 if __name__ == '__main__':

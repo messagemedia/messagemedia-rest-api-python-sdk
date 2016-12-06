@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.reporting_detail_properties_sorting import ReportingDetailPropertiesSorting
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.reporting_detail_properties_sorting import ReportingDetailPropertiesSorting
 
 
 class TestReportingDetailPropertiesSorting(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestReportingDetailPropertiesSorting(unittest.TestCase):
         """
         Test ReportingDetailPropertiesSorting
         """
-        model = messagemedia_restapi.models.reporting_detail_properties_sorting.ReportingDetailPropertiesSorting()
+        model = messagemedia_rest_api.models.reporting_detail_properties_sorting.ReportingDetailPropertiesSorting()
 
 
 if __name__ == '__main__':

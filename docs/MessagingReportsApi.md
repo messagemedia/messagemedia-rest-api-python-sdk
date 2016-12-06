@@ -1,4 +1,4 @@
-# messagemedia_restapi.MessagingReportsApi
+# messagemedia_rest_api.MessagingReportsApi
 
 All URIs are relative to *https://api.messagemedia.com/v1*
 
@@ -22,16 +22,16 @@ Returns a detailed list of all delivery reports received during the specified ti
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingReportsApi()
+api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = '2013-10-20T19:20:30+01:00' # datetime | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 start_date = '2013-10-20T19:20:30+01:00' # datetime | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 account = 'account_example' # str | Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. (optional)
@@ -105,16 +105,16 @@ Returns a summarised report of all delivery reports received during the specifie
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingReportsApi()
+api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = '2013-10-20T19:20:30+01:00' # datetime | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 group_by = 'group_by_example' # str | Field to group results set by
 start_date = '2013-10-20T19:20:30+01:00' # datetime | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
@@ -186,16 +186,16 @@ Returns a detailed list of all message received during the specified time
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingReportsApi()
+api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = '2013-10-20T19:20:30+01:00' # datetime | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 start_date = '2013-10-20T19:20:30+01:00' # datetime | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 account = 'account_example' # str | Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. (optional)
@@ -267,16 +267,16 @@ Returns a summarised report of all messages received during the specified time, 
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingReportsApi()
+api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = '2013-10-20T19:20:30+01:00' # datetime | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 group_by = 'group_by_example' # str | Field to group results set by
 start_date = '2013-10-20T19:20:30+01:00' # datetime | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
@@ -344,16 +344,16 @@ Returns a detailed list of all message sent during the specified time
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingReportsApi()
+api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = '2013-10-20T19:20:30+01:00' # datetime | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 start_date = '2013-10-20T19:20:30+01:00' # datetime | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 account = 'account_example' # str | Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. (optional)
@@ -429,16 +429,16 @@ Returns a summarised report of all messages sent during the specified time, grou
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingReportsApi()
+api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = '2013-10-20T19:20:30+01:00' # datetime | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
 group_by = 'group_by_example' # str | Field to group results set by
 start_date = '2013-10-20T19:20:30+01:00' # datetime | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.

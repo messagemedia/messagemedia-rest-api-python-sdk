@@ -1,4 +1,4 @@
-# messagemedia_restapi.DeliveryReportsApi
+# messagemedia_rest_api.DeliveryReportsApi
 
 All URIs are relative to *https://api.messagemedia.com/v1*
 
@@ -18,16 +18,16 @@ Return up to 100 delivery reports that have been received and haven't  been conf
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.DeliveryReportsApi()
+api_instance = messagemedia_rest_api.DeliveryReportsApi()
 
 try: 
     # Check delivery reports
@@ -65,17 +65,17 @@ Confirm the specified delivery reports as being received so they will no longer 
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.DeliveryReportsApi()
-delivery_report_id = messagemedia_restapi.DeliveryReportId() # DeliveryReportId | A list of delivery report IDs to mark as confirmed
+api_instance = messagemedia_rest_api.DeliveryReportsApi()
+delivery_report_id = messagemedia_rest_api.DeliveryReportId() # DeliveryReportId | A list of delivery report IDs to mark as confirmed
 
 try: 
     # Confirm delivery reports as received

@@ -76,7 +76,7 @@ class Configuration(object):
 
         # Logging Settings
         self.logger = {}
-        self.logger["package_logger"] = logging.getLogger("messagemedia_restapi")
+        self.logger["package_logger"] = logging.getLogger("messagemedia_rest_api")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         # Log format
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'

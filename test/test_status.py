@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.status import Status
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.status import Status
 
 
 class TestStatus(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestStatus(unittest.TestCase):
         """
         Test Status
         """
-        model = messagemedia_restapi.models.status.Status()
+        model = messagemedia_rest_api.models.status.Status()
 
 
 if __name__ == '__main__':

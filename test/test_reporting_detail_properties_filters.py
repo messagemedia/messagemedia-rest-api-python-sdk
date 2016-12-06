@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.reporting_detail_properties_filters import ReportingDetailPropertiesFilters
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.reporting_detail_properties_filters import ReportingDetailPropertiesFilters
 
 
 class TestReportingDetailPropertiesFilters(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestReportingDetailPropertiesFilters(unittest.TestCase):
         """
         Test ReportingDetailPropertiesFilters
         """
-        model = messagemedia_restapi.models.reporting_detail_properties_filters.ReportingDetailPropertiesFilters()
+        model = messagemedia_rest_api.models.reporting_detail_properties_filters.ReportingDetailPropertiesFilters()
 
 
 if __name__ == '__main__':

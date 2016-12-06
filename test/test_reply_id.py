@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.reply_id import ReplyId
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.reply_id import ReplyId
 
 
 class TestReplyId(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestReplyId(unittest.TestCase):
         """
         Test ReplyId
         """
-        model = messagemedia_restapi.models.reply_id.ReplyId()
+        model = messagemedia_rest_api.models.reply_id.ReplyId()
 
 
 if __name__ == '__main__':

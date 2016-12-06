@@ -1,10 +1,10 @@
-# messagemedia_restapi
+# MessageMedia REST API
 Australia's Leading Messaging Solutions for Business and Enterprise.
 
 
 - API version: 1.0.0
 - Package version: 1.0.0
-- Build date: 2016-12-06T04:52:20.808Z
+- Build date: 2016-12-06T05:07:32.826Z
 For more information, please visit [https://www.messagemedia.com/contact-us](https://www.messagemedia.com/contact-us)
 
 ## Requirements.
@@ -23,7 +23,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import messagemedia_restapi 
+import messagemedia_rest_api 
 ```
 
 ### Setuptools
@@ -37,7 +37,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import messagemedia_restapi
+import messagemedia_rest_api
 ```
 
 ## Getting Started
@@ -46,15 +46,15 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
-api_instance = messagemedia_restapi.DeliveryReportsApi
+api_instance = messagemedia_rest_api.DeliveryReportsApi
 
 try:
     # Check delivery reports

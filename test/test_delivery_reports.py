@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.delivery_reports import DeliveryReports
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.delivery_reports import DeliveryReports
 
 
 class TestDeliveryReports(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestDeliveryReports(unittest.TestCase):
         """
         Test DeliveryReports
         """
-        model = messagemedia_restapi.models.delivery_reports.DeliveryReports()
+        model = messagemedia_rest_api.models.delivery_reports.DeliveryReports()
 
 
 if __name__ == '__main__':

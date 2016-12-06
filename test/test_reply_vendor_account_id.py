@@ -27,9 +27,9 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.models.reply_vendor_account_id import ReplyVendorAccountId
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.models.reply_vendor_account_id import ReplyVendorAccountId
 
 
 class TestReplyVendorAccountId(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestReplyVendorAccountId(unittest.TestCase):
         """
         Test ReplyVendorAccountId
         """
-        model = messagemedia_restapi.models.reply_vendor_account_id.ReplyVendorAccountId()
+        model = messagemedia_rest_api.models.reply_vendor_account_id.ReplyVendorAccountId()
 
 
 if __name__ == '__main__':

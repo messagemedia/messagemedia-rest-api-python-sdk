@@ -1,4 +1,4 @@
-# messagemedia_restapi.RepliesApi
+# messagemedia_rest_api.RepliesApi
 
 All URIs are relative to *https://api.messagemedia.com/v1*
 
@@ -18,16 +18,16 @@ Return up to 100 reply messages that have been received and haven't  been confir
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.RepliesApi()
+api_instance = messagemedia_rest_api.RepliesApi()
 
 try: 
     # Check replies
@@ -65,17 +65,17 @@ Confirm the specified replies as being received so they will no longer be return
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.RepliesApi()
-reply_id = messagemedia_restapi.ReplyId() # ReplyId | A list of reply IDs to mark as confirmed
+api_instance = messagemedia_rest_api.RepliesApi()
+reply_id = messagemedia_rest_api.ReplyId() # ReplyId | A list of reply IDs to mark as confirmed
 
 try: 
     # Confirm replies as received

@@ -1,4 +1,4 @@
-# messagemedia_restapi.MessagingApi
+# messagemedia_rest_api.MessagingApi
 
 All URIs are relative to *https://api.messagemedia.com/v1*
 
@@ -19,16 +19,16 @@ Get the status and details of a previously submitted message
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingApi()
+api_instance = messagemedia_rest_api.MessagingApi()
 message_id = 'message_id_example' # str | Unique ID representing message that has been submitted
 
 try: 
@@ -70,17 +70,17 @@ Submit one or more (up to 100 per request) SMS or text to voice messages to be s
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingApi()
-messages = messagemedia_restapi.Messages() # Messages | A list of messages to be sent
+api_instance = messagemedia_rest_api.MessagingApi()
+messages = messagemedia_rest_api.Messages() # Messages | A list of messages to be sent
 
 try: 
     # Send one or more messages
@@ -121,18 +121,18 @@ Cancel a scheduled message
 ### Example 
 ```python
 import time
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-messagemedia_restapi.configuration.username = 'YOUR_USERNAME'
-messagemedia_restapi.configuration.password = 'YOUR_PASSWORD'
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = messagemedia_restapi.MessagingApi()
+api_instance = messagemedia_rest_api.MessagingApi()
 message_id = 'message_id_example' # str | Unique ID representing message to be updated
-status = messagemedia_restapi.Status() # Status | New status for the message
+status = messagemedia_rest_api.Status() # Status | New status for the message
 
 try: 
     # Cancel a scheduled message

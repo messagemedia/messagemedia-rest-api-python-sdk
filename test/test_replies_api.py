@@ -27,16 +27,16 @@ import os
 import sys
 import unittest
 
-import messagemedia_restapi
-from messagemedia_restapi.rest import ApiException
-from messagemedia_restapi.apis.replies_api import RepliesApi
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from messagemedia_rest_api.apis.replies_api import RepliesApi
 
 
 class TestRepliesApi(unittest.TestCase):
     """ RepliesApi unit test stubs """
 
     def setUp(self):
-        self.api = messagemedia_restapi.apis.replies_api.RepliesApi()
+        self.api = messagemedia_rest_api.apis.replies_api.RepliesApi()
 
     def tearDown(self):
         pass
