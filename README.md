@@ -4,7 +4,7 @@ Australia's Leading Messaging Solutions for Business and Enterprise.
 
 - API version: 1.0.0
 - Package version: 1.0.0
-- Build date: 2016-12-07T02:49:31.388Z
+- Build date: 2016-12-07T04:58:34.734Z
 For more information, please visit [https://www.messagemedia.com/contact-us](https://www.messagemedia.com/contact-us)
 
 ## Requirements.
