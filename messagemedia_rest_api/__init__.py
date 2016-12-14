@@ -28,8 +28,6 @@ from .models.delivery_report import DeliveryReport
 from .models.delivery_report_id import DeliveryReportId
 from .models.delivery_reports import DeliveryReports
 from .models.inline_response_400 import InlineResponse400
-from .models.message_format import MessageFormat
-from .models.message_status import MessageStatus
 from .models.message_status_code import MessageStatusCode
 from .models.messages import Messages
 from .models.new_message import NewMessage
