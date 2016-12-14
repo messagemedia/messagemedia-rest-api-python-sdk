@@ -30,7 +30,7 @@ class SubmittedMessage(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, callback_url=None, content=None, destination_number=None, delivery_report=False, format='SMS', message_expiry_timestamp=None, metadata=None, scheduled=None, source_number=None, source_number_type=None, message_id=None, status=None):
+    def __init__(self, callback_url=None, content=None, destination_number=None, delivery_report=False, format=None, message_expiry_timestamp=None, metadata=None, scheduled=None, source_number=None, source_number_type=None, message_id=None, status=None):
         """
         SubmittedMessage - a model
 

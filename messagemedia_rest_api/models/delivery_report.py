@@ -30,7 +30,7 @@ class DeliveryReport(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, account=None, destination_address=None, destination_address_country=None, format='SMS', id=None, in_response_to=None, metadata=None, source_address=None, source_address_country=None, status=None, status_code=None, timestamp=None):
+    def __init__(self, account=None, destination_address=None, destination_address_country=None, format=None, id=None, in_response_to=None, metadata=None, source_address=None, source_address_country=None, status=None, status_code=None, timestamp=None):
         """
         DeliveryReport - a model
 
@@ -49,7 +49,7 @@ class DeliveryReport(object):
             'metadata': 'object',
             'source_address': 'str',
             'source_address_country': 'str',
-            'status': 'MessageStatus',
+            'status': 'str',
             'status_code': 'MessageStatusCode',
             'timestamp': 'datetime'
         }
@@ -320,10 +320,10 @@ class DeliveryReport(object):
     def status(self):
         """
         Gets the status of this DeliveryReport.
-
+        Status of the message
 
         :return: The status of this DeliveryReport.
-        :rtype: MessageStatus
+        :rtype: str
         """
         return self._status
 
@@ -331,11 +331,17 @@ class DeliveryReport(object):
     def status(self, status):
         """
         Sets the status of this DeliveryReport.
-
+        Status of the message
 
         :param status: The status of this DeliveryReport.
-        :type: MessageStatus
+        :type: str
         """
+        allowed_values = ["queued", "processing", "processed", "scheduled", "cancelled", "enroute", "held", "submitted", "delivered", "expired", "rejected"]
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"
+                .format(status, allowed_values)
+            )
 
         self._status = status
 

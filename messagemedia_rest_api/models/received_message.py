@@ -45,7 +45,7 @@ class ReceivedMessage(object):
             'content': 'str',
             'destination_address': 'str',
             'destination_address_country': 'str',
-            'format': 'MessageFormat',
+            'format': 'str',
             'id': 'str',
             'in_response_to': 'str',
             'metadata': 'object',
@@ -221,10 +221,10 @@ class ReceivedMessage(object):
     def format(self):
         """
         Gets the format of this ReceivedMessage.
-
+        Format of message, SMS or VOICE
 
         :return: The format of this ReceivedMessage.
-        :rtype: MessageFormat
+        :rtype: str
         """
         return self._format
 
@@ -232,11 +232,17 @@ class ReceivedMessage(object):
     def format(self, format):
         """
         Sets the format of this ReceivedMessage.
-
+        Format of message, SMS or VOICE
 
         :param format: The format of this ReceivedMessage.
-        :type: MessageFormat
+        :type: str
         """
+        allowed_values = ["SMS", "VOICE"]
+        if format not in allowed_values:
+            raise ValueError(
+                "Invalid value for `format` ({0}), must be one of {1}"
+                .format(format, allowed_values)
+            )
 
         self._format = format
 

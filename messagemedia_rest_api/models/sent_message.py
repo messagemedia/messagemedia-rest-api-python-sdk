@@ -46,7 +46,7 @@ class SentMessage(object):
             'delivery_report': 'bool',
             'destination_address': 'str',
             'destination_address_country': 'str',
-            'format': 'MessageFormat',
+            'format': 'str',
             'id': 'str',
             'in_response_to': 'str',
             'metadata': 'object',
@@ -241,10 +241,10 @@ class SentMessage(object):
     def format(self):
         """
         Gets the format of this SentMessage.
-
+        Format of message, SMS or VOICE
 
         :return: The format of this SentMessage.
-        :rtype: MessageFormat
+        :rtype: str
         """
         return self._format
 
@@ -252,11 +252,17 @@ class SentMessage(object):
     def format(self, format):
         """
         Sets the format of this SentMessage.
-
+        Format of message, SMS or VOICE
 
         :param format: The format of this SentMessage.
-        :type: MessageFormat
+        :type: str
         """
+        allowed_values = ["SMS", "VOICE"]
+        if format not in allowed_values:
+            raise ValueError(
+                "Invalid value for `format` ({0}), must be one of {1}"
+                .format(format, allowed_values)
+            )
 
         self._format = format
 
