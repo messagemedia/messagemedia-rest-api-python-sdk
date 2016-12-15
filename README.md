@@ -1,10 +1,10 @@
-# MessageMedia REST API
+# MessageMedia REST API Python SDK
 Australia's Leading Messaging Solutions for Business and Enterprise.
 
 
 - API version: 1.0.0
 - Package version: 1.0.0
-- Build date: 2016-12-15T03:15:35.583Z
+- Build date: 2016-12-15T03:27:35.548Z
 For more information, please visit [https://www.messagemedia.com/contact-us](https://www.messagemedia.com/contact-us)
 
 ## Requirements.
@@ -50,10 +50,10 @@ import messagemedia_rest_api
 from messagemedia_rest_api.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: basic
+# MessageMedia REST API Python SDK
 messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
 messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
-# create an instance of the API class
+# MessageMedia REST API Python SDK
 api_instance = messagemedia_rest_api.DeliveryReportsApi
 
 try:
