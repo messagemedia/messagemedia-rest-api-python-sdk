@@ -192,7 +192,7 @@ class SubmittedMessage(object):
     def format(self):
         """
         Gets the format of this SubmittedMessage.
-        Format of message, SMS or VOICE.
+        Format of message, SMS or TTS (Text To Speech).
 
         :return: The format of this SubmittedMessage.
         :rtype: str
@@ -203,12 +203,12 @@ class SubmittedMessage(object):
     def format(self, format):
         """
         Sets the format of this SubmittedMessage.
-        Format of message, SMS or VOICE.
+        Format of message, SMS or TTS (Text To Speech).
 
         :param format: The format of this SubmittedMessage.
         :type: str
         """
-        allowed_values = ["SMS", "VOICE"]
+        allowed_values = ["SMS", "TTS"]
         if format not in allowed_values:
             raise ValueError(
                 "Invalid value for `format` ({0}), must be one of {1}"

@@ -51,7 +51,7 @@ class DeliveryReportsApi(object):
     def check_reports(self, **kwargs):
         """
         Check delivery reports
-        Return up to 100 delivery reports that have been received and haven't  been confirmed using the confirm reports endpoint
+        Return up to 100 delivery reports that have been received and haven't been confirmed using the confirm reports endpoint
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -77,7 +77,7 @@ class DeliveryReportsApi(object):
     def check_reports_with_http_info(self, **kwargs):
         """
         Check delivery reports
-        Return up to 100 delivery reports that have been received and haven't  been confirmed using the confirm reports endpoint
+        Return up to 100 delivery reports that have been received and haven't been confirmed using the confirm reports endpoint
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

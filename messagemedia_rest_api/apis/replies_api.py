@@ -51,7 +51,7 @@ class RepliesApi(object):
     def check_replies(self, **kwargs):
         """
         Check replies
-        Return up to 100 reply messages that have been received and haven't  been confirmed using the confirm replies endpoint
+        Return up to 100 reply messages that have been received and haven't been confirmed using the confirm replies endpoint
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -77,7 +77,7 @@ class RepliesApi(object):
     def check_replies_with_http_info(self, **kwargs):
         """
         Check replies
-        Return up to 100 reply messages that have been received and haven't  been confirmed using the confirm replies endpoint
+        Return up to 100 reply messages that have been received and haven't been confirmed using the confirm replies endpoint
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

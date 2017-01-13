@@ -221,7 +221,7 @@ class ReceivedMessage(object):
     def format(self):
         """
         Gets the format of this ReceivedMessage.
-        Format of message, SMS or VOICE
+        Format of message, SMS or TTS (Text To Speech)
 
         :return: The format of this ReceivedMessage.
         :rtype: str
@@ -232,12 +232,12 @@ class ReceivedMessage(object):
     def format(self, format):
         """
         Sets the format of this ReceivedMessage.
-        Format of message, SMS or VOICE
+        Format of message, SMS or TTS (Text To Speech)
 
         :param format: The format of this ReceivedMessage.
         :type: str
         """
-        allowed_values = ["SMS", "VOICE"]
+        allowed_values = ["SMS", "TTS"]
         if format not in allowed_values:
             raise ValueError(
                 "Invalid value for `format` ({0}), must be one of {1}"
