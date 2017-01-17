@@ -30,7 +30,7 @@ class SentMessage(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, account=None, content=None, delivered_timestamp=None, delivery_report=None, destination_address=None, destination_address_country=None, format=None, id=None, in_response_to=None, metadata=None, source_address=None, source_address_country=None, timestamp=None):
+    def __init__(self, account=None, content=None, delivered_timestamp=None, delivery_report=None, destination_address=None, destination_address_country=None, format=None, id=None, in_response_to=None, metadata=None, source_address=None, source_address_country=None, units=None, timestamp=None):
         """
         SentMessage - a model
 
@@ -52,6 +52,7 @@ class SentMessage(object):
             'metadata': 'object',
             'source_address': 'str',
             'source_address_country': 'str',
+            'units': 'int',
             'timestamp': 'datetime'
         }
 
@@ -68,6 +69,7 @@ class SentMessage(object):
             'metadata': 'metadata',
             'source_address': 'source_address',
             'source_address_country': 'source_address_country',
+            'units': 'units',
             'timestamp': 'timestamp'
         }
 
@@ -83,6 +85,7 @@ class SentMessage(object):
         self._metadata = metadata
         self._source_address = source_address
         self._source_address_country = source_address_country
+        self._units = units
         self._timestamp = timestamp
 
     @property
@@ -387,6 +390,29 @@ class SentMessage(object):
         """
 
         self._source_address_country = source_address_country
+
+    @property
+    def units(self):
+        """
+        Gets the units of this SentMessage.
+        The total number of calculated SMS units this message cost. 1 SMS unit is defined as 160 GSM characters, or 153 GSM characters for multi-part messages as some characters are used to concatenate the message on the receiving handset. Messages with one or more non-GSM characters will be submitted using UCS-2 encoding. UCS-2 encoding means the message has a maximum of 70 characters per SMS, or 67 characters for multi-part messages.
+
+        :return: The units of this SentMessage.
+        :rtype: int
+        """
+        return self._units
+
+    @units.setter
+    def units(self, units):
+        """
+        Sets the units of this SentMessage.
+        The total number of calculated SMS units this message cost. 1 SMS unit is defined as 160 GSM characters, or 153 GSM characters for multi-part messages as some characters are used to concatenate the message on the receiving handset. Messages with one or more non-GSM characters will be submitted using UCS-2 encoding. UCS-2 encoding means the message has a maximum of 70 characters per SMS, or 67 characters for multi-part messages.
+
+        :param units: The units of this SentMessage.
+        :type: int
+        """
+
+        self._units = units
 
     @property
     def timestamp(self):
