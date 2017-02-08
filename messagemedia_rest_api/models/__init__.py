@@ -30,6 +30,8 @@ from .delivery_reports import DeliveryReports
 from .inline_response_400 import InlineResponse400
 from .message_status_code import MessageStatusCode
 from .messages import Messages
+from .metadata_keys_response import MetadataKeysResponse
+from .metadata_keys_response_properties import MetadataKeysResponseProperties
 from .new_message import NewMessage
 from .pagination import Pagination
 from .received_message import ReceivedMessage

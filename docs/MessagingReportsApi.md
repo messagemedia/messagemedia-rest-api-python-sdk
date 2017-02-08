@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_delivery_reports_detail**](MessagingReportsApi.md#get_delivery_reports_detail) | **GET** /reporting/delivery_reports/detail | Returns a list of delivery reports
 [**get_delivery_reports_summary**](MessagingReportsApi.md#get_delivery_reports_summary) | **GET** /reporting/delivery_reports/summary | Returns a summarised report of delivery reports
+[**get_metadata_keys**](MessagingReportsApi.md#get_metadata_keys) | **GET** /reporting/{messageType}/metadata/keys | Returns a list of metadata keys
 [**get_received_messages_detail**](MessagingReportsApi.md#get_received_messages_detail) | **GET** /reporting/received_messages/detail | Returns a list message received
 [**get_received_messages_summary**](MessagingReportsApi.md#get_received_messages_summary) | **GET** /reporting/received_messages/summary | Returns a summarised report of messages received
 [**get_sent_messages_detail**](MessagingReportsApi.md#get_sent_messages_detail) | **GET** /reporting/sent_messages/detail | Returns a list of message sent
@@ -164,6 +165,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SummaryReport**](SummaryReport.md)
+
+### Authorization
+
+[basic](../README.md#basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_metadata_keys**
+> MetadataKeysResponse get_metadata_keys(message_type, start_date, end_date, account=account, timezone=timezone)
+
+Returns a list of metadata keys
+
+Returns a list of all metadata keys used for the specified message type during the specified time. Results are limited to 100 keys.
+
+### Example 
+```python
+import time
+import messagemedia_rest_api
+from messagemedia_rest_api.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: basic
+messagemedia_rest_api.configuration.username = 'YOUR_USERNAME'
+messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = messagemedia_rest_api.MessagingReportsApi()
+message_type = 'message_type_example' # str | Message type. Possible values are sent messages, received messages and delivery receipts.
+start_date = '2013-10-20T19:20:30+01:00' # datetime | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
+end_date = '2013-10-20T19:20:30+01:00' # datetime | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request.
+account = 'account_example' # str | Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. (optional)
+timezone = 'timezone_example' # str | The timezone to use for the context of the request. If provided this will be used as the timezone for the start date and end date parameters, and all datetime fields returns in the response. The timezone should be provided as a IANA (Internet Assigned Numbers Authority) time zone database zone name, i.e. 'Australia/Melbourne'. (optional)
+
+try: 
+    # Returns a list of metadata keys
+    api_response = api_instance.get_metadata_keys(message_type, start_date, end_date, account=account, timezone=timezone)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling MessagingReportsApi->get_metadata_keys: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **message_type** | **str**| Message type. Possible values are sent messages, received messages and delivery receipts. | 
+ **start_date** | **datetime**| Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. | 
+ **end_date** | **datetime**| End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. | 
+ **account** | **str**| Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. | [optional] 
+ **timezone** | **str**| The timezone to use for the context of the request. If provided this will be used as the timezone for the start date and end date parameters, and all datetime fields returns in the response. The timezone should be provided as a IANA (Internet Assigned Numbers Authority) time zone database zone name, i.e. &#39;Australia/Melbourne&#39;. | [optional] 
+
+### Return type
+
+[**MetadataKeysResponse**](MetadataKeysResponse.md)
 
 ### Authorization
 
