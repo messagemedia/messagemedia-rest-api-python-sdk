@@ -57,14 +57,6 @@ class TestMessagingReportsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_metadata_keys(self):
-        """
-        Test case for get_metadata_keys
-
-        Returns a list of metadata keys
-        """
-        pass
-
     def test_get_received_messages_detail(self):
         """
         Test case for get_received_messages_detail

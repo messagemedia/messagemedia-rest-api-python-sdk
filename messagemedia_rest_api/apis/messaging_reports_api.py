@@ -65,7 +65,7 @@ class MessagingReportsApi(object):
             for asynchronous request. (optional)
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
         :param str message_format: Filter results by message format.
@@ -108,7 +108,7 @@ class MessagingReportsApi(object):
             for asynchronous request. (optional)
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
         :param str message_format: Filter results by message format.
@@ -128,7 +128,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'start_date', 'account', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'start_date', 'accounts', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -148,10 +148,10 @@ class MessagingReportsApi(object):
         if ('start_date' not in params) or (params['start_date'] is None):
             raise ValueError("Missing the required parameter `start_date` when calling `get_delivery_reports_detail`")
 
-        if 'account' in params and len(params['account']) > 200:
-            raise ValueError("Invalid value for parameter `account` when calling `get_delivery_reports_detail`, length must be less than or equal to `200`")
-        if 'account' in params and len(params['account']) < 1:
-            raise ValueError("Invalid value for parameter `account` when calling `get_delivery_reports_detail`, length must be greater than or equal to `1`")
+        if 'accounts' in params and len(params['accounts']) > 200:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_delivery_reports_detail`, length must be less than or equal to `200`")
+        if 'accounts' in params and len(params['accounts']) < 1:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_delivery_reports_detail`, length must be greater than or equal to `1`")
         if 'destination_address' in params and len(params['destination_address']) > 15:
             raise ValueError("Invalid value for parameter `destination_address` when calling `get_delivery_reports_detail`, length must be less than or equal to `15`")
         if 'destination_address' in params and len(params['destination_address']) < 1:
@@ -186,8 +186,8 @@ class MessagingReportsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'account' in params:
-            query_params['account'] = params['account']
+        if 'accounts' in params:
+            query_params['accounts'] = params['accounts']
         if 'destination_address_country' in params:
             query_params['destination_address_country'] = params['destination_address_country']
         if 'destination_address' in params:
@@ -271,7 +271,7 @@ class MessagingReportsApi(object):
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param str group_by: Field to group results set by (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
         :param str message_format: Filter results by message format.
@@ -313,7 +313,7 @@ class MessagingReportsApi(object):
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param str group_by: Field to group results set by (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
         :param str message_format: Filter results by message format.
@@ -331,7 +331,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'group_by', 'start_date', 'account', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'summary_by', 'summary_field', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'group_by', 'start_date', 'accounts', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'summary_by', 'summary_field', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -354,10 +354,10 @@ class MessagingReportsApi(object):
         if ('start_date' not in params) or (params['start_date'] is None):
             raise ValueError("Missing the required parameter `start_date` when calling `get_delivery_reports_summary`")
 
-        if 'account' in params and len(params['account']) > 200:
-            raise ValueError("Invalid value for parameter `account` when calling `get_delivery_reports_summary`, length must be less than or equal to `200`")
-        if 'account' in params and len(params['account']) < 1:
-            raise ValueError("Invalid value for parameter `account` when calling `get_delivery_reports_summary`, length must be greater than or equal to `1`")
+        if 'accounts' in params and len(params['accounts']) > 200:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_delivery_reports_summary`, length must be less than or equal to `200`")
+        if 'accounts' in params and len(params['accounts']) < 1:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_delivery_reports_summary`, length must be greater than or equal to `1`")
         if 'destination_address' in params and len(params['destination_address']) > 15:
             raise ValueError("Invalid value for parameter `destination_address` when calling `get_delivery_reports_summary`, length must be less than or equal to `15`")
         if 'destination_address' in params and len(params['destination_address']) < 1:
@@ -386,8 +386,8 @@ class MessagingReportsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'account' in params:
-            query_params['account'] = params['account']
+        if 'accounts' in params:
+            query_params['accounts'] = params['accounts']
         if 'destination_address_country' in params:
             query_params['destination_address_country'] = params['destination_address_country']
         if 'destination_address' in params:
@@ -451,136 +451,6 @@ class MessagingReportsApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def get_metadata_keys(self, message_type, start_date, end_date, **kwargs):
-        """
-        Returns a list of metadata keys
-        Returns a list of all metadata keys used for the specified message type during the specified time. Results are limited to 100 keys.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_metadata_keys(message_type, start_date, end_date, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str message_type: Message type. Possible values are sent messages, received messages and delivery receipts. (required)
-        :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
-        :param str timezone: The timezone to use for the context of the request. If provided this will be used as the timezone for the start date and end date parameters, and all datetime fields returns in the response. The timezone should be provided as a IANA (Internet Assigned Numbers Authority) time zone database zone name, i.e. 'Australia/Melbourne'.
-        :return: MetadataKeysResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.get_metadata_keys_with_http_info(message_type, start_date, end_date, **kwargs)
-        else:
-            (data) = self.get_metadata_keys_with_http_info(message_type, start_date, end_date, **kwargs)
-            return data
-
-    def get_metadata_keys_with_http_info(self, message_type, start_date, end_date, **kwargs):
-        """
-        Returns a list of metadata keys
-        Returns a list of all metadata keys used for the specified message type during the specified time. Results are limited to 100 keys.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_metadata_keys_with_http_info(message_type, start_date, end_date, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str message_type: Message type. Possible values are sent messages, received messages and delivery receipts. (required)
-        :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
-        :param str timezone: The timezone to use for the context of the request. If provided this will be used as the timezone for the start date and end date parameters, and all datetime fields returns in the response. The timezone should be provided as a IANA (Internet Assigned Numbers Authority) time zone database zone name, i.e. 'Australia/Melbourne'.
-        :return: MetadataKeysResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['message_type', 'start_date', 'end_date', 'account', 'timezone']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_metadata_keys" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'message_type' is set
-        if ('message_type' not in params) or (params['message_type'] is None):
-            raise ValueError("Missing the required parameter `message_type` when calling `get_metadata_keys`")
-        # verify the required parameter 'start_date' is set
-        if ('start_date' not in params) or (params['start_date'] is None):
-            raise ValueError("Missing the required parameter `start_date` when calling `get_metadata_keys`")
-        # verify the required parameter 'end_date' is set
-        if ('end_date' not in params) or (params['end_date'] is None):
-            raise ValueError("Missing the required parameter `end_date` when calling `get_metadata_keys`")
-
-        if 'account' in params and len(params['account']) > 200:
-            raise ValueError("Invalid value for parameter `account` when calling `get_metadata_keys`, length must be less than or equal to `200`")
-        if 'account' in params and len(params['account']) < 1:
-            raise ValueError("Invalid value for parameter `account` when calling `get_metadata_keys`, length must be greater than or equal to `1`")
-        resource_path = '/reporting/{messageType}/metadata/keys'.replace('{format}', 'json')
-        path_params = {}
-        if 'message_type' in params:
-            path_params['messageType'] = params['message_type']
-
-        query_params = {}
-        if 'start_date' in params:
-            query_params['start_date'] = params['start_date']
-        if 'end_date' in params:
-            query_params['end_date'] = params['end_date']
-        if 'account' in params:
-            query_params['account'] = params['account']
-        if 'timezone' in params:
-            query_params['timezone'] = params['timezone']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['basic']
-
-        return self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='MetadataKeysResponse',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
-
     def get_received_messages_detail(self, end_date, start_date, **kwargs):
         """
         Returns a list message received
@@ -598,7 +468,7 @@ class MessagingReportsApi(object):
             for asynchronous request. (optional)
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str action: Filter results by the action that was invoked for this message.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
@@ -640,7 +510,7 @@ class MessagingReportsApi(object):
             for asynchronous request. (optional)
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str action: Filter results by the action that was invoked for this message.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
@@ -659,7 +529,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'start_date', 'account', 'action', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'start_date', 'accounts', 'action', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -679,10 +549,10 @@ class MessagingReportsApi(object):
         if ('start_date' not in params) or (params['start_date'] is None):
             raise ValueError("Missing the required parameter `start_date` when calling `get_received_messages_detail`")
 
-        if 'account' in params and len(params['account']) > 200:
-            raise ValueError("Invalid value for parameter `account` when calling `get_received_messages_detail`, length must be less than or equal to `200`")
-        if 'account' in params and len(params['account']) < 1:
-            raise ValueError("Invalid value for parameter `account` when calling `get_received_messages_detail`, length must be greater than or equal to `1`")
+        if 'accounts' in params and len(params['accounts']) > 200:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_received_messages_detail`, length must be less than or equal to `200`")
+        if 'accounts' in params and len(params['accounts']) < 1:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_received_messages_detail`, length must be greater than or equal to `1`")
         if 'destination_address' in params and len(params['destination_address']) > 15:
             raise ValueError("Invalid value for parameter `destination_address` when calling `get_received_messages_detail`, length must be less than or equal to `15`")
         if 'destination_address' in params and len(params['destination_address']) < 1:
@@ -709,8 +579,8 @@ class MessagingReportsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'account' in params:
-            query_params['account'] = params['account']
+        if 'accounts' in params:
+            query_params['accounts'] = params['accounts']
         if 'action' in params:
             query_params['action'] = params['action']
         if 'destination_address_country' in params:
@@ -792,7 +662,7 @@ class MessagingReportsApi(object):
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param str group_by: Field to group results set by (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
         :param str message_format: Filter results by message format.
@@ -832,7 +702,7 @@ class MessagingReportsApi(object):
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param str group_by: Field to group results set by (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
         :param str message_format: Filter results by message format.
@@ -848,7 +718,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'group_by', 'start_date', 'account', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'summary_by', 'summary_field', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'group_by', 'start_date', 'accounts', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'summary_by', 'summary_field', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -871,10 +741,10 @@ class MessagingReportsApi(object):
         if ('start_date' not in params) or (params['start_date'] is None):
             raise ValueError("Missing the required parameter `start_date` when calling `get_received_messages_summary`")
 
-        if 'account' in params and len(params['account']) > 200:
-            raise ValueError("Invalid value for parameter `account` when calling `get_received_messages_summary`, length must be less than or equal to `200`")
-        if 'account' in params and len(params['account']) < 1:
-            raise ValueError("Invalid value for parameter `account` when calling `get_received_messages_summary`, length must be greater than or equal to `1`")
+        if 'accounts' in params and len(params['accounts']) > 200:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_received_messages_summary`, length must be less than or equal to `200`")
+        if 'accounts' in params and len(params['accounts']) < 1:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_received_messages_summary`, length must be greater than or equal to `1`")
         if 'destination_address' in params and len(params['destination_address']) > 15:
             raise ValueError("Invalid value for parameter `destination_address` when calling `get_received_messages_summary`, length must be less than or equal to `15`")
         if 'destination_address' in params and len(params['destination_address']) < 1:
@@ -895,8 +765,8 @@ class MessagingReportsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'account' in params:
-            query_params['account'] = params['account']
+        if 'accounts' in params:
+            query_params['accounts'] = params['accounts']
         if 'destination_address_country' in params:
             query_params['destination_address_country'] = params['destination_address_country']
         if 'destination_address' in params:
@@ -973,7 +843,7 @@ class MessagingReportsApi(object):
             for asynchronous request. (optional)
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param bool delivery_report: Filter results by delivery report.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
@@ -1017,7 +887,7 @@ class MessagingReportsApi(object):
             for asynchronous request. (optional)
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param bool delivery_report: Filter results by delivery report.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
@@ -1038,7 +908,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'start_date', 'account', 'delivery_report', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'start_date', 'accounts', 'delivery_report', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1058,10 +928,10 @@ class MessagingReportsApi(object):
         if ('start_date' not in params) or (params['start_date'] is None):
             raise ValueError("Missing the required parameter `start_date` when calling `get_sent_messages_detail`")
 
-        if 'account' in params and len(params['account']) > 200:
-            raise ValueError("Invalid value for parameter `account` when calling `get_sent_messages_detail`, length must be less than or equal to `200`")
-        if 'account' in params and len(params['account']) < 1:
-            raise ValueError("Invalid value for parameter `account` when calling `get_sent_messages_detail`, length must be greater than or equal to `1`")
+        if 'accounts' in params and len(params['accounts']) > 200:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_sent_messages_detail`, length must be less than or equal to `200`")
+        if 'accounts' in params and len(params['accounts']) < 1:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_sent_messages_detail`, length must be greater than or equal to `1`")
         if 'destination_address' in params and len(params['destination_address']) > 15:
             raise ValueError("Invalid value for parameter `destination_address` when calling `get_sent_messages_detail`, length must be less than or equal to `15`")
         if 'destination_address' in params and len(params['destination_address']) < 1:
@@ -1096,8 +966,8 @@ class MessagingReportsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'account' in params:
-            query_params['account'] = params['account']
+        if 'accounts' in params:
+            query_params['accounts'] = params['accounts']
         if 'delivery_report' in params:
             query_params['delivery_report'] = params['delivery_report']
         if 'destination_address_country' in params:
@@ -1183,7 +1053,7 @@ class MessagingReportsApi(object):
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param str group_by: Field to group results set by (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param bool delivery_report: Filter results by delivery report.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
@@ -1225,7 +1095,7 @@ class MessagingReportsApi(object):
         :param datetime end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
         :param str group_by: Field to group results set by (required)
         :param datetime start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. (required)
-        :param str account: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
+        :param str accounts: Filter results by specific accounts. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param bool delivery_report: Filter results by delivery report.
         :param str destination_address_country: Filter results by destination address country.
         :param str destination_address: Filter results by destination address.
@@ -1243,7 +1113,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'group_by', 'start_date', 'account', 'delivery_report', 'destination_address_country', 'destination_address', 'summary_by', 'summary_field', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'group_by', 'start_date', 'accounts', 'delivery_report', 'destination_address_country', 'destination_address', 'summary_by', 'summary_field', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1266,10 +1136,10 @@ class MessagingReportsApi(object):
         if ('start_date' not in params) or (params['start_date'] is None):
             raise ValueError("Missing the required parameter `start_date` when calling `get_sent_messages_summary`")
 
-        if 'account' in params and len(params['account']) > 200:
-            raise ValueError("Invalid value for parameter `account` when calling `get_sent_messages_summary`, length must be less than or equal to `200`")
-        if 'account' in params and len(params['account']) < 1:
-            raise ValueError("Invalid value for parameter `account` when calling `get_sent_messages_summary`, length must be greater than or equal to `1`")
+        if 'accounts' in params and len(params['accounts']) > 200:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_sent_messages_summary`, length must be less than or equal to `200`")
+        if 'accounts' in params and len(params['accounts']) < 1:
+            raise ValueError("Invalid value for parameter `accounts` when calling `get_sent_messages_summary`, length must be greater than or equal to `1`")
         if 'destination_address' in params and len(params['destination_address']) > 15:
             raise ValueError("Invalid value for parameter `destination_address` when calling `get_sent_messages_summary`, length must be less than or equal to `15`")
         if 'destination_address' in params and len(params['destination_address']) < 1:
@@ -1294,8 +1164,8 @@ class MessagingReportsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'account' in params:
-            query_params['account'] = params['account']
+        if 'accounts' in params:
+            query_params['accounts'] = params['accounts']
         if 'delivery_report' in params:
             query_params['delivery_report'] = params['delivery_report']
         if 'destination_address_country' in params:
