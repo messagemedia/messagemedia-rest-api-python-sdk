@@ -50,8 +50,8 @@ class MessagingReportsApi(object):
 
     def get_async_report_by_id(self, report_id, **kwargs):
         """
-        Lists an asynchronous report.
-        This endpoints lists metadata of a requested asynchronous report.
+        Gets a single asynchronous report.
+        This endpoints shows information of a single requested asynchronous report.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -77,8 +77,8 @@ class MessagingReportsApi(object):
 
     def get_async_report_by_id_with_http_info(self, report_id, **kwargs):
         """
-        Lists an asynchronous report.
-        This endpoints lists metadata of a requested asynchronous report.
+        Gets a single asynchronous report.
+        This endpoints shows information of a single requested asynchronous report.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -258,8 +258,8 @@ class MessagingReportsApi(object):
 
     def get_async_reports(self, **kwargs):
         """
-        Gets a single asynchronous report.
-        This endpoint lists metadata about requested async reports.
+        Lists asynchronous reports.
+        This endpoint lists all the requested asynchronous reports.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -271,6 +271,8 @@ class MessagingReportsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param int page: Page number for paging through paginated result sets.
+        :param int page_size: Number of results to return in a page for paginated result sets.
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -284,8 +286,8 @@ class MessagingReportsApi(object):
 
     def get_async_reports_with_http_info(self, **kwargs):
         """
-        Gets a single asynchronous report.
-        This endpoint lists metadata about requested async reports.
+        Lists asynchronous reports.
+        This endpoint lists all the requested asynchronous reports.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -297,12 +299,14 @@ class MessagingReportsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param int page: Page number for paging through paginated result sets.
+        :param int page_size: Number of results to return in a page for paginated result sets.
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['page', 'page_size']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -316,10 +320,20 @@ class MessagingReportsApi(object):
             params[key] = val
         del params['kwargs']
 
+        if 'page' in params and params['page'] < 1.0:
+            raise ValueError("Invalid value for parameter `page` when calling `get_async_reports`, must be a value greater than or equal to `1.0`")
+        if 'page_size' in params and params['page_size'] > 100.0:
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_async_reports`, must be a value less than or equal to  `100.0`")
+        if 'page_size' in params and params['page_size'] < 1.0:
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_async_reports`, must be a value greater than or equal to `1.0`")
         resource_path = '/reporting/async_reports'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
+        if 'page' in params:
+            query_params['page'] = params['page']
+        if 'page_size' in params:
+            query_params['page_size'] = params['page_size']
 
         header_params = {}
 

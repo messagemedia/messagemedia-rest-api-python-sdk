@@ -4,9 +4,9 @@ All URIs are relative to *https://api.messagemedia.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_async_report_by_id**](MessagingReportsApi.md#get_async_report_by_id) | **GET** /reporting/async_reports/{report_id} | Lists an asynchronous report.
+[**get_async_report_by_id**](MessagingReportsApi.md#get_async_report_by_id) | **GET** /reporting/async_reports/{report_id} | Gets a single asynchronous report.
 [**get_async_report_data_by_id**](MessagingReportsApi.md#get_async_report_data_by_id) | **GET** /reporting/async_reports/{report_id}/data | Gets the data of an asynchronous report.
-[**get_async_reports**](MessagingReportsApi.md#get_async_reports) | **GET** /reporting/async_reports | Gets a single asynchronous report.
+[**get_async_reports**](MessagingReportsApi.md#get_async_reports) | **GET** /reporting/async_reports | Lists asynchronous reports.
 [**get_delivery_reports_detail**](MessagingReportsApi.md#get_delivery_reports_detail) | **GET** /reporting/delivery_reports/detail | Returns a list of delivery reports
 [**get_delivery_reports_summary**](MessagingReportsApi.md#get_delivery_reports_summary) | **GET** /reporting/delivery_reports/summary | Returns a summarised report of delivery reports
 [**get_metadata_keys**](MessagingReportsApi.md#get_metadata_keys) | **GET** /reporting/{messageType}/metadata/keys | Returns a list of metadata keys
@@ -25,9 +25,9 @@ Method | HTTP request | Description
 # **get_async_report_by_id**
 > AsyncReport get_async_report_by_id(report_id)
 
-Lists an asynchronous report.
+Gets a single asynchronous report.
 
-This endpoints lists metadata of a requested asynchronous report.
+This endpoints shows information of a single requested asynchronous report.
 
 ### Example 
 ```python
@@ -45,7 +45,7 @@ api_instance = messagemedia_rest_api.MessagingReportsApi()
 report_id = 'report_id_example' # str | Unique ID of the async report
 
 try: 
-    # Lists an asynchronous report.
+    # Gets a single asynchronous report.
     api_response = api_instance.get_async_report_by_id(report_id)
     pprint(api_response)
 except ApiException as e:
@@ -125,11 +125,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_async_reports**
-> InlineResponse200 get_async_reports()
+> InlineResponse200 get_async_reports(page=page, page_size=page_size)
 
-Gets a single asynchronous report.
+Lists asynchronous reports.
 
-This endpoint lists metadata about requested async reports.
+This endpoint lists all the requested asynchronous reports.
 
 ### Example 
 ```python
@@ -144,17 +144,23 @@ messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = messagemedia_rest_api.MessagingReportsApi()
+page = 56 # int | Page number for paging through paginated result sets. (optional)
+page_size = 56 # int | Number of results to return in a page for paginated result sets. (optional)
 
 try: 
-    # Gets a single asynchronous report.
-    api_response = api_instance.get_async_reports()
+    # Lists asynchronous reports.
+    api_response = api_instance.get_async_reports(page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingReportsApi->get_async_reports: %s\n" % e
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number for paging through paginated result sets. | [optional] 
+ **page_size** | **int**| Number of results to return in a page for paginated result sets. | [optional] 
 
 ### Return type
 

@@ -45,7 +45,7 @@ class TestMessagingReportsApi(unittest.TestCase):
         """
         Test case for get_async_report_by_id
 
-        Lists an asynchronous report.
+        Gets a single asynchronous report.
         """
         pass
 
@@ -61,7 +61,7 @@ class TestMessagingReportsApi(unittest.TestCase):
         """
         Test case for get_async_reports
 
-        Gets a single asynchronous report.
+        Lists asynchronous reports.
         """
         pass
 
