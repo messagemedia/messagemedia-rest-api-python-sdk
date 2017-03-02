@@ -30,7 +30,7 @@ class AsyncReceivedMessagesDetailRequest(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, start_date=None, end_date=None, sort_by=None, sort_direction=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, source_address_country=None, source_address=None, action=None):
+    def __init__(self, start_date=None, end_date=None, sort_by=None, sort_direction=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, source_address_country=None, source_address=None, action=None, delivery_options=None):
         """
         AsyncReceivedMessagesDetailRequest - a model
 
@@ -53,7 +53,8 @@ class AsyncReceivedMessagesDetailRequest(object):
             'metadata_value': 'MetadataValueBody',
             'source_address_country': 'SourceAddressCountryBody',
             'source_address': 'SourceAddressBody',
-            'action': 'ActionBody'
+            'action': 'ActionBody',
+            'delivery_options': 'DeliveryOptionsBody'
         }
 
         self.attribute_map = {
@@ -70,7 +71,8 @@ class AsyncReceivedMessagesDetailRequest(object):
             'metadata_value': 'metadata_value',
             'source_address_country': 'source_address_country',
             'source_address': 'source_address',
-            'action': 'action'
+            'action': 'action',
+            'delivery_options': 'delivery_options'
         }
 
         self._start_date = start_date
@@ -87,6 +89,7 @@ class AsyncReceivedMessagesDetailRequest(object):
         self._source_address_country = source_address_country
         self._source_address = source_address
         self._action = action
+        self._delivery_options = delivery_options
 
     @property
     def start_date(self):
@@ -415,6 +418,29 @@ class AsyncReceivedMessagesDetailRequest(object):
         """
 
         self._action = action
+
+    @property
+    def delivery_options(self):
+        """
+        Gets the delivery_options of this AsyncReceivedMessagesDetailRequest.
+
+
+        :return: The delivery_options of this AsyncReceivedMessagesDetailRequest.
+        :rtype: DeliveryOptionsBody
+        """
+        return self._delivery_options
+
+    @delivery_options.setter
+    def delivery_options(self, delivery_options):
+        """
+        Sets the delivery_options of this AsyncReceivedMessagesDetailRequest.
+
+
+        :param delivery_options: The delivery_options of this AsyncReceivedMessagesDetailRequest.
+        :type: DeliveryOptionsBody
+        """
+
+        self._delivery_options = delivery_options
 
     def to_dict(self):
         """

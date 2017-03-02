@@ -30,7 +30,7 @@ class AsyncDeliverySentMessagesRequest(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, summary_by=None, summary_field=None, group_by=None, start_date=None, end_date=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, source_address_country=None, source_address=None, delivery_report=None, status_code=None):
+    def __init__(self, summary_by=None, summary_field=None, group_by=None, start_date=None, end_date=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, source_address_country=None, source_address=None, delivery_report=None, status_code=None, delivery_options=None):
         """
         AsyncDeliverySentMessagesRequest - a model
 
@@ -55,7 +55,8 @@ class AsyncDeliverySentMessagesRequest(object):
             'source_address_country': 'SourceAddressCountryBody',
             'source_address': 'SourceAddressBody',
             'delivery_report': 'DeliveryReportBody',
-            'status_code': 'StatusCodeBody'
+            'status_code': 'StatusCodeBody',
+            'delivery_options': 'DeliveryOptionsBody'
         }
 
         self.attribute_map = {
@@ -74,7 +75,8 @@ class AsyncDeliverySentMessagesRequest(object):
             'source_address_country': 'source_address_country',
             'source_address': 'source_address',
             'delivery_report': 'delivery_report',
-            'status_code': 'status_code'
+            'status_code': 'status_code',
+            'delivery_options': 'delivery_options'
         }
 
         self._summary_by = summary_by
@@ -93,6 +95,7 @@ class AsyncDeliverySentMessagesRequest(object):
         self._source_address = source_address
         self._delivery_report = delivery_report
         self._status_code = status_code
+        self._delivery_options = delivery_options
 
     @property
     def summary_by(self):
@@ -467,6 +470,29 @@ class AsyncDeliverySentMessagesRequest(object):
         """
 
         self._status_code = status_code
+
+    @property
+    def delivery_options(self):
+        """
+        Gets the delivery_options of this AsyncDeliverySentMessagesRequest.
+
+
+        :return: The delivery_options of this AsyncDeliverySentMessagesRequest.
+        :rtype: DeliveryOptionsBody
+        """
+        return self._delivery_options
+
+    @delivery_options.setter
+    def delivery_options(self, delivery_options):
+        """
+        Sets the delivery_options of this AsyncDeliverySentMessagesRequest.
+
+
+        :param delivery_options: The delivery_options of this AsyncDeliverySentMessagesRequest.
+        :type: DeliveryOptionsBody
+        """
+
+        self._delivery_options = delivery_options
 
     def to_dict(self):
         """

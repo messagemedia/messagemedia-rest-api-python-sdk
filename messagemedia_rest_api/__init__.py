@@ -34,6 +34,8 @@ from .models.async_received_messages_summary_request import AsyncReceivedMessage
 from .models.async_report import AsyncReport
 from .models.async_report_response import AsyncReportResponse
 from .models.async_sent_messages_detail_request import AsyncSentMessagesDetailRequest
+from .models.delivery_options_body import DeliveryOptionsBody
+from .models.delivery_options_body_inner import DeliveryOptionsBodyInner
 from .models.delivery_report import DeliveryReport
 from .models.delivery_report_body import DeliveryReportBody
 from .models.delivery_report_id import DeliveryReportId

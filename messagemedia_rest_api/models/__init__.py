@@ -34,6 +34,8 @@ from .async_received_messages_summary_request import AsyncReceivedMessagesSummar
 from .async_report import AsyncReport
 from .async_report_response import AsyncReportResponse
 from .async_sent_messages_detail_request import AsyncSentMessagesDetailRequest
+from .delivery_options_body import DeliveryOptionsBody
+from .delivery_options_body_inner import DeliveryOptionsBodyInner
 from .delivery_report import DeliveryReport
 from .delivery_report_body import DeliveryReportBody
 from .delivery_report_id import DeliveryReportId

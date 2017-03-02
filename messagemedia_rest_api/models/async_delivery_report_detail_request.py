@@ -30,7 +30,7 @@ class AsyncDeliveryReportDetailRequest(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, start_date=None, end_date=None, sort_by=None, sort_direction=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, status_code=None, status=None, source_address_country=None, source_address=None):
+    def __init__(self, start_date=None, end_date=None, sort_by=None, sort_direction=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, status_code=None, status=None, source_address_country=None, source_address=None, delivery_options=None):
         """
         AsyncDeliveryReportDetailRequest - a model
 
@@ -54,7 +54,8 @@ class AsyncDeliveryReportDetailRequest(object):
             'status_code': 'StatusCodeBody',
             'status': 'StatusBody',
             'source_address_country': 'SourceAddressCountryBody',
-            'source_address': 'SourceAddressBody'
+            'source_address': 'SourceAddressBody',
+            'delivery_options': 'DeliveryOptionsBody'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class AsyncDeliveryReportDetailRequest(object):
             'status_code': 'status_code',
             'status': 'status',
             'source_address_country': 'source_address_country',
-            'source_address': 'source_address'
+            'source_address': 'source_address',
+            'delivery_options': 'delivery_options'
         }
 
         self._start_date = start_date
@@ -90,6 +92,7 @@ class AsyncDeliveryReportDetailRequest(object):
         self._status = status
         self._source_address_country = source_address_country
         self._source_address = source_address
+        self._delivery_options = delivery_options
 
     @property
     def start_date(self):
@@ -441,6 +444,29 @@ class AsyncDeliveryReportDetailRequest(object):
         """
 
         self._source_address = source_address
+
+    @property
+    def delivery_options(self):
+        """
+        Gets the delivery_options of this AsyncDeliveryReportDetailRequest.
+
+
+        :return: The delivery_options of this AsyncDeliveryReportDetailRequest.
+        :rtype: DeliveryOptionsBody
+        """
+        return self._delivery_options
+
+    @delivery_options.setter
+    def delivery_options(self, delivery_options):
+        """
+        Sets the delivery_options of this AsyncDeliveryReportDetailRequest.
+
+
+        :param delivery_options: The delivery_options of this AsyncDeliveryReportDetailRequest.
+        :type: DeliveryOptionsBody
+        """
+
+        self._delivery_options = delivery_options
 
     def to_dict(self):
         """
