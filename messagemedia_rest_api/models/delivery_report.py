@@ -50,7 +50,7 @@ class DeliveryReport(object):
             'source_address': 'str',
             'source_address_country': 'str',
             'status': 'str',
-            'status_code': 'MessageStatusCode',
+            'status_code': 'str',
             'timestamp': 'datetime'
         }
 
@@ -349,10 +349,10 @@ class DeliveryReport(object):
     def status_code(self):
         """
         Gets the status_code of this DeliveryReport.
-
+        Status code of the message
 
         :return: The status_code of this DeliveryReport.
-        :rtype: MessageStatusCode
+        :rtype: str
         """
         return self._status_code
 
@@ -360,10 +360,10 @@ class DeliveryReport(object):
     def status_code(self, status_code):
         """
         Sets the status_code of this DeliveryReport.
-
+        Status code of the message
 
         :param status_code: The status_code of this DeliveryReport.
-        :type: MessageStatusCode
+        :type: str
         """
 
         self._status_code = status_code

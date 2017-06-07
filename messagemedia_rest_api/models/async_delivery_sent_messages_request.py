@@ -42,7 +42,7 @@ class AsyncDeliverySentMessagesRequest(object):
         self.types = {
             'summary_by': 'SummaryByBody',
             'summary_field': 'SummaryFieldBody',
-            'group_by': 'str',
+            'group_by': 'list[str]',
             'start_date': 'StartDateBody',
             'end_date': 'EndDateBody',
             'timezone': 'TimezoneBody',
@@ -147,10 +147,10 @@ class AsyncDeliverySentMessagesRequest(object):
     def group_by(self):
         """
         Gets the group_by of this AsyncDeliverySentMessagesRequest.
-        Field to group results set by
+        List of fields to group results set by
 
         :return: The group_by of this AsyncDeliverySentMessagesRequest.
-        :rtype: str
+        :rtype: list[str]
         """
         return self._group_by
 
@@ -158,12 +158,12 @@ class AsyncDeliverySentMessagesRequest(object):
     def group_by(self, group_by):
         """
         Sets the group_by of this AsyncDeliverySentMessagesRequest.
-        Field to group results set by
+        List of fields to group results set by
 
         :param group_by: The group_by of this AsyncDeliverySentMessagesRequest.
-        :type: str
+        :type: list[str]
         """
-        allowed_values = ["DAY", "DELIVERY_REPORT", "DESTINATION_ADDRESS", "DESTINATION_ADDRESS_COUNTRY", "FORMAT", "HOUR", "METADATA_KEY", "METADATA_VALUE", "MINUTE", "MONTH", "SOURCE_ADDRESS", "SOURCE_ADDRESS_COUNTRY", "STATUS", "STATUS_CODE", "YEAR"]
+        allowed_values = ["DAY", "DELIVERY_REPORT", "DESTINATION_ADDRESS", "DESTINATION_ADDRESS_COUNTRY", "FORMAT", "HOUR", "METADATA_KEY", "METADATA_VALUE", "MINUTE", "MONTH", "SOURCE_ADDRESS", "SOURCE_ADDRESS_COUNTRY", "STATUS", "STATUS_CODE", "YEAR", "ACCOUNT"]
         if group_by not in allowed_values:
             raise ValueError(
                 "Invalid value for `group_by` ({0}), must be one of {1}"

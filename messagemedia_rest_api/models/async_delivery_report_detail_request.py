@@ -30,7 +30,7 @@ class AsyncDeliveryReportDetailRequest(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, start_date=None, end_date=None, sort_by=None, sort_direction=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, status_code=None, status=None, source_address_country=None, source_address=None, delivery_options=None):
+    def __init__(self, start_date=None, end_date=None, sort_by=None, sort_direction=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, status_code=None, status=None, statuses=None, source_address_country=None, source_address=None, delivery_options=None):
         """
         AsyncDeliveryReportDetailRequest - a model
 
@@ -53,6 +53,7 @@ class AsyncDeliveryReportDetailRequest(object):
             'metadata_value': 'MetadataValueBody',
             'status_code': 'StatusCodeBody',
             'status': 'StatusBody',
+            'statuses': 'StatusesBody',
             'source_address_country': 'SourceAddressCountryBody',
             'source_address': 'SourceAddressBody',
             'delivery_options': 'DeliveryOptionsBody'
@@ -72,6 +73,7 @@ class AsyncDeliveryReportDetailRequest(object):
             'metadata_value': 'metadata_value',
             'status_code': 'status_code',
             'status': 'status',
+            'statuses': 'statuses',
             'source_address_country': 'source_address_country',
             'source_address': 'source_address',
             'delivery_options': 'delivery_options'
@@ -90,6 +92,7 @@ class AsyncDeliveryReportDetailRequest(object):
         self._metadata_value = metadata_value
         self._status_code = status_code
         self._status = status
+        self._statuses = statuses
         self._source_address_country = source_address_country
         self._source_address = source_address
         self._delivery_options = delivery_options
@@ -398,6 +401,29 @@ class AsyncDeliveryReportDetailRequest(object):
         """
 
         self._status = status
+
+    @property
+    def statuses(self):
+        """
+        Gets the statuses of this AsyncDeliveryReportDetailRequest.
+
+
+        :return: The statuses of this AsyncDeliveryReportDetailRequest.
+        :rtype: StatusesBody
+        """
+        return self._statuses
+
+    @statuses.setter
+    def statuses(self, statuses):
+        """
+        Sets the statuses of this AsyncDeliveryReportDetailRequest.
+
+
+        :param statuses: The statuses of this AsyncDeliveryReportDetailRequest.
+        :type: StatusesBody
+        """
+
+        self._statuses = statuses
 
     @property
     def source_address_country(self):

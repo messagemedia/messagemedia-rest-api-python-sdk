@@ -29,11 +29,11 @@ import unittest
 
 import messagemedia_rest_api
 from messagemedia_rest_api.rest import ApiException
-from messagemedia_rest_api.models.message_status_code import MessageStatusCode
+from messagemedia_rest_api.models.statuses_body import StatusesBody
 
 
-class TestMessageStatusCode(unittest.TestCase):
-    """ MessageStatusCode unit test stubs """
+class TestStatusesBody(unittest.TestCase):
+    """ StatusesBody unit test stubs """
 
     def setUp(self):
         pass
@@ -41,11 +41,11 @@ class TestMessageStatusCode(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMessageStatusCode(self):
+    def testStatusesBody(self):
         """
-        Test MessageStatusCode
+        Test StatusesBody
         """
-        model = messagemedia_rest_api.models.message_status_code.MessageStatusCode()
+        model = messagemedia_rest_api.models.statuses_body.StatusesBody()
 
 
 if __name__ == '__main__':

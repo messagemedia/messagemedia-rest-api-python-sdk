@@ -29,11 +29,11 @@ import unittest
 
 import messagemedia_rest_api
 from messagemedia_rest_api.rest import ApiException
-from messagemedia_rest_api.models.summary_report_data import SummaryReportData
+from messagemedia_rest_api.models.summary_report_item import SummaryReportItem
 
 
-class TestSummaryReportData(unittest.TestCase):
-    """ SummaryReportData unit test stubs """
+class TestSummaryReportItem(unittest.TestCase):
+    """ SummaryReportItem unit test stubs """
 
     def setUp(self):
         pass
@@ -41,11 +41,11 @@ class TestSummaryReportData(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSummaryReportData(self):
+    def testSummaryReportItem(self):
         """
-        Test SummaryReportData
+        Test SummaryReportItem
         """
-        model = messagemedia_rest_api.models.summary_report_data.SummaryReportData()
+        model = messagemedia_rest_api.models.summary_report_item.SummaryReportItem()
 
 
 if __name__ == '__main__':

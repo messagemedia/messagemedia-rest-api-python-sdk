@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **summary_by** | [**SummaryByBody**](SummaryByBody.md) |  | [optional] 
 **summary_field** | [**SummaryFieldBody**](SummaryFieldBody.md) |  | [optional] 
-**group_by** | **str** | Field to group results set by | [optional] 
+**group_by** | **list[str]** | List of fields to group results set by | [optional] 
 **start_date** | [**StartDateBody**](StartDateBody.md) |  | [optional] 
 **end_date** | [**EndDateBody**](EndDateBody.md) |  | [optional] 
 **timezone** | [**TimezoneBody**](TimezoneBody.md) |  | [optional] 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **source_address_country** | [**SourceAddressCountryBody**](SourceAddressCountryBody.md) |  | [optional] 
 **source_address** | [**SourceAddressBody**](SourceAddressBody.md) |  | [optional] 
 **status** | [**StatusBody**](StatusBody.md) |  | [optional] 
+**statuses** | [**StatusesBody**](StatusesBody.md) |  | [optional] 
 **status_code** | [**StatusCodeBody**](StatusCodeBody.md) |  | [optional] 
 **delivery_options** | [**DeliveryOptionsBody**](DeliveryOptionsBody.md) |  | [optional] 
 

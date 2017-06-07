@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_delivery_reports_detail**
-> DeliveryReports get_delivery_reports_detail(end_date, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
+> DeliveryReports get_delivery_reports_detail(end_date, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, statuses=statuses, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
 
 Returns a list of delivery reports
 
@@ -206,7 +206,8 @@ message_format = 'message_format_example' # str | Filter results by message form
 metadata_key = 'metadata_key_example' # str | Filter results for messages that include a metadata key. (optional)
 metadata_value = 'metadata_value_example' # str | Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided. (optional)
 status_code = 'status_code_example' # str | Filter results by message status code. (optional)
-status = 'status_example' # str | Filter results by message status. (optional)
+status = 'status_example' # str | Filter results by message status. Can't be combined with statuses. (optional)
+statuses = ['statuses_example'] # list[str] | Filter results by message status. Can't be combined with status. (optional)
 page = 56 # int | Page number for paging through paginated result sets. (optional)
 page_size = 56 # int | Number of results to return in a page for paginated result sets. (optional)
 sort_by = 'sort_by_example' # str | Field to sort results set by (optional)
@@ -217,7 +218,7 @@ timezone = 'timezone_example' # str | The timezone to use for the context of the
 
 try: 
     # Returns a list of delivery reports
-    api_response = api_instance.get_delivery_reports_detail(end_date, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
+    api_response = api_instance.get_delivery_reports_detail(end_date, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, statuses=statuses, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingReportsApi->get_delivery_reports_detail: %s\n" % e
@@ -236,7 +237,8 @@ Name | Type | Description  | Notes
  **metadata_key** | **str**| Filter results for messages that include a metadata key. | [optional] 
  **metadata_value** | **str**| Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided. | [optional] 
  **status_code** | **str**| Filter results by message status code. | [optional] 
- **status** | **str**| Filter results by message status. | [optional] 
+ **status** | **str**| Filter results by message status. Can&#39;t be combined with statuses. | [optional] 
+ **statuses** | [**list[str]**](str.md)| Filter results by message status. Can&#39;t be combined with status. | [optional] 
  **page** | **int**| Page number for paging through paginated result sets. | [optional] 
  **page_size** | **int**| Number of results to return in a page for paginated result sets. | [optional] 
  **sort_by** | **str**| Field to sort results set by | [optional] 
@@ -261,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_delivery_reports_summary**
-> SummaryReport get_delivery_reports_summary(end_date, group_by, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, summary_by=summary_by, summary_field=summary_field, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
+> SummaryReport get_delivery_reports_summary(end_date, group_by, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, statuses=statuses, summary_by=summary_by, summary_field=summary_field, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
 
 Returns a summarised report of delivery reports
 
@@ -281,7 +283,7 @@ messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = 'end_date_example' # str | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\".
-group_by = 'group_by_example' # str | Field to group results set by
+group_by = ['group_by_example'] # list[str] | List of fields to group results set by
 start_date = 'start_date_example' # str | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\".
 accounts = 'accounts_example' # str | Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. (optional)
 destination_address_country = 'destination_address_country_example' # str | Filter results by destination address country. (optional)
@@ -290,7 +292,8 @@ message_format = 'message_format_example' # str | Filter results by message form
 metadata_key = 'metadata_key_example' # str | Filter results for messages that include a metadata key. (optional)
 metadata_value = 'metadata_value_example' # str | Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided. (optional)
 status_code = 'status_code_example' # str | Filter results by message status code. (optional)
-status = 'status_example' # str | Filter results by message status. (optional)
+status = 'status_example' # str | Filter results by message status. Can't be combined with statuses. (optional)
+statuses = ['statuses_example'] # list[str] | Filter results by message status. Can't be combined with status. (optional)
 summary_by = 'summary_by_example' # str | Function to apply when summarising results (optional)
 summary_field = 'summary_field_example' # str | Field to summarise results by (optional)
 source_address_country = 'source_address_country_example' # str | Filter results by source address country. (optional)
@@ -299,7 +302,7 @@ timezone = 'timezone_example' # str | The timezone to use for the context of the
 
 try: 
     # Returns a summarised report of delivery reports
-    api_response = api_instance.get_delivery_reports_summary(end_date, group_by, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, summary_by=summary_by, summary_field=summary_field, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
+    api_response = api_instance.get_delivery_reports_summary(end_date, group_by, start_date, accounts=accounts, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, statuses=statuses, summary_by=summary_by, summary_field=summary_field, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingReportsApi->get_delivery_reports_summary: %s\n" % e
@@ -310,7 +313,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **end_date** | **str**| End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss\&quot;, e.g. \&quot;2017-02-10T13:30:00\&quot;. | 
- **group_by** | **str**| Field to group results set by | 
+ **group_by** | [**list[str]**](str.md)| List of fields to group results set by | 
  **start_date** | **str**| Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss\&quot;, e.g. \&quot;2017-02-10T13:30:00\&quot;. | 
  **accounts** | **str**| Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. | [optional] 
  **destination_address_country** | **str**| Filter results by destination address country. | [optional] 
@@ -319,7 +322,8 @@ Name | Type | Description  | Notes
  **metadata_key** | **str**| Filter results for messages that include a metadata key. | [optional] 
  **metadata_value** | **str**| Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided. | [optional] 
  **status_code** | **str**| Filter results by message status code. | [optional] 
- **status** | **str**| Filter results by message status. | [optional] 
+ **status** | **str**| Filter results by message status. Can&#39;t be combined with statuses. | [optional] 
+ **statuses** | [**list[str]**](str.md)| Filter results by message status. Can&#39;t be combined with status. | [optional] 
  **summary_by** | **str**| Function to apply when summarising results | [optional] 
  **summary_field** | **str**| Field to summarise results by | [optional] 
  **source_address_country** | **str**| Filter results by source address country. | [optional] 
@@ -502,7 +506,7 @@ messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = 'end_date_example' # str | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\".
-group_by = 'group_by_example' # str | Field to group results set by
+group_by = ['group_by_example'] # list[str] | List of fields to group results set by
 start_date = 'start_date_example' # str | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\".
 accounts = 'accounts_example' # str | Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. (optional)
 destination_address_country = 'destination_address_country_example' # str | Filter results by destination address country. (optional)
@@ -529,7 +533,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **end_date** | **str**| End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss\&quot;, e.g. \&quot;2017-02-10T13:30:00\&quot;. | 
- **group_by** | **str**| Field to group results set by | 
+ **group_by** | [**list[str]**](str.md)| List of fields to group results set by | 
  **start_date** | **str**| Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss\&quot;, e.g. \&quot;2017-02-10T13:30:00\&quot;. | 
  **accounts** | **str**| Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. | [optional] 
  **destination_address_country** | **str**| Filter results by destination address country. | [optional] 
@@ -559,7 +563,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sent_messages_detail**
-> SentMessages get_sent_messages_detail(end_date, start_date, accounts=accounts, delivery_report=delivery_report, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
+> SentMessages get_sent_messages_detail(end_date, start_date, accounts=accounts, delivery_report=delivery_report, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, statuses=statuses, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
 
 Returns a list of message sent
 
@@ -588,7 +592,8 @@ message_format = 'message_format_example' # str | Filter results by message form
 metadata_key = 'metadata_key_example' # str | Filter results for messages that include a metadata key. (optional)
 metadata_value = 'metadata_value_example' # str | Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided. (optional)
 status_code = 'status_code_example' # str | Filter results by message status code. (optional)
-status = 'status_example' # str | Filter results by message status. (optional)
+status = 'status_example' # str | Filter results by message status. Can't be combined with statuses. (optional)
+statuses = ['statuses_example'] # list[str] | Filter results by message status. Can't be combined with status. (optional)
 page = 56 # int | Page number for paging through paginated result sets. (optional)
 page_size = 56 # int | Number of results to return in a page for paginated result sets. (optional)
 sort_by = 'sort_by_example' # str | Field to sort results set by (optional)
@@ -599,7 +604,7 @@ timezone = 'timezone_example' # str | The timezone to use for the context of the
 
 try: 
     # Returns a list of message sent
-    api_response = api_instance.get_sent_messages_detail(end_date, start_date, accounts=accounts, delivery_report=delivery_report, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
+    api_response = api_instance.get_sent_messages_detail(end_date, start_date, accounts=accounts, delivery_report=delivery_report, destination_address_country=destination_address_country, destination_address=destination_address, message_format=message_format, metadata_key=metadata_key, metadata_value=metadata_value, status_code=status_code, status=status, statuses=statuses, page=page, page_size=page_size, sort_by=sort_by, sort_direction=sort_direction, source_address_country=source_address_country, source_address=source_address, timezone=timezone)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling MessagingReportsApi->get_sent_messages_detail: %s\n" % e
@@ -619,7 +624,8 @@ Name | Type | Description  | Notes
  **metadata_key** | **str**| Filter results for messages that include a metadata key. | [optional] 
  **metadata_value** | **str**| Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided. | [optional] 
  **status_code** | **str**| Filter results by message status code. | [optional] 
- **status** | **str**| Filter results by message status. | [optional] 
+ **status** | **str**| Filter results by message status. Can&#39;t be combined with statuses. | [optional] 
+ **statuses** | [**list[str]**](str.md)| Filter results by message status. Can&#39;t be combined with status. | [optional] 
  **page** | **int**| Page number for paging through paginated result sets. | [optional] 
  **page_size** | **int**| Number of results to return in a page for paginated result sets. | [optional] 
  **sort_by** | **str**| Field to sort results set by | [optional] 
@@ -664,7 +670,7 @@ messagemedia_rest_api.configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = messagemedia_rest_api.MessagingReportsApi()
 end_date = 'end_date_example' # str | End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\".
-group_by = 'group_by_example' # str | Field to group results set by
+group_by = ['group_by_example'] # list[str] | List of fields to group results set by
 start_date = 'start_date_example' # str | Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\".
 accounts = 'accounts_example' # str | Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. (optional)
 delivery_report = true # bool | Filter results by delivery report. (optional)
@@ -693,7 +699,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **end_date** | **str**| End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss\&quot;, e.g. \&quot;2017-02-10T13:30:00\&quot;. | 
- **group_by** | **str**| Field to group results set by | 
+ **group_by** | [**list[str]**](str.md)| List of fields to group results set by | 
  **start_date** | **str**| Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss\&quot;, e.g. \&quot;2017-02-10T13:30:00\&quot;. | 
  **accounts** | **str**| Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts. | [optional] 
  **delivery_report** | **bool**| Filter results by delivery report. | [optional] 

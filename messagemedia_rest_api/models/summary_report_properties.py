@@ -133,7 +133,7 @@ class SummaryReportProperties(object):
         :param grouping: The grouping of this SummaryReportProperties.
         :type: str
         """
-        allowed_values = ["DAY", "DELIVERY_REPORT", "DESTINATION_ADDRESS", "DESTINATION_ADDRESS_COUNTRY", "FORMAT", "HOUR", "METADATA_KEY", "METADATA_VALUE", "MINUTE", "MONTH", "SOURCE_ADDRESS", "SOURCE_ADDRESS_COUNTRY", "STATUS", "STATUS_CODE", "YEAR"]
+        allowed_values = ["DAY", "DELIVERY_REPORT", "DESTINATION_ADDRESS", "DESTINATION_ADDRESS_COUNTRY", "FORMAT", "HOUR", "METADATA_KEY", "METADATA_VALUE", "MINUTE", "MONTH", "SOURCE_ADDRESS", "SOURCE_ADDRESS_COUNTRY", "STATUS", "STATUS_CODE", "YEAR", "ACCOUNT"]
         if grouping not in allowed_values:
             raise ValueError(
                 "Invalid value for `grouping` ({0}), must be one of {1}"

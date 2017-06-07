@@ -46,7 +46,6 @@ from .end_date_body import EndDateBody
 from .inline_response_200 import InlineResponse200
 from .inline_response_400 import InlineResponse400
 from .message_format_body import MessageFormatBody
-from .message_status_code import MessageStatusCode
 from .messages import Messages
 from .metadata_key_body import MetadataKeyBody
 from .metadata_keys_response import MetadataKeysResponse
@@ -74,11 +73,12 @@ from .start_date_body import StartDateBody
 from .status import Status
 from .status_body import StatusBody
 from .status_code_body import StatusCodeBody
+from .statuses_body import StatusesBody
 from .submitted_message import SubmittedMessage
 from .submitted_messages import SubmittedMessages
 from .summary_by_body import SummaryByBody
 from .summary_field_body import SummaryFieldBody
 from .summary_report import SummaryReport
-from .summary_report_data import SummaryReportData
+from .summary_report_item import SummaryReportItem
 from .summary_report_properties import SummaryReportProperties
 from .timezone_body import TimezoneBody

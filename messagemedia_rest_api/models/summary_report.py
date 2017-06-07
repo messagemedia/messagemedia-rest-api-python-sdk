@@ -41,7 +41,7 @@ class SummaryReport(object):
         """
         self.types = {
             'properties': 'SummaryReportProperties',
-            'data': 'list[SummaryReportData]'
+            'data': 'list[SummaryReportItem]'
         }
 
         self.attribute_map = {
@@ -82,7 +82,7 @@ class SummaryReport(object):
 
 
         :return: The data of this SummaryReport.
-        :rtype: list[SummaryReportData]
+        :rtype: list[SummaryReportItem]
         """
         return self._data
 
@@ -93,7 +93,7 @@ class SummaryReport(object):
 
 
         :param data: The data of this SummaryReport.
-        :type: list[SummaryReportData]
+        :type: list[SummaryReportItem]
         """
 
         self._data = data

@@ -391,7 +391,8 @@ class MessagingReportsApi(object):
         :param str metadata_key: Filter results for messages that include a metadata key.
         :param str metadata_value: Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided.
         :param str status_code: Filter results by message status code.
-        :param str status: Filter results by message status.
+        :param str status: Filter results by message status. Can't be combined with statuses.
+        :param list[str] statuses: Filter results by message status. Can't be combined with status.
         :param int page: Page number for paging through paginated result sets.
         :param int page_size: Number of results to return in a page for paginated result sets.
         :param str sort_by: Field to sort results set by
@@ -434,7 +435,8 @@ class MessagingReportsApi(object):
         :param str metadata_key: Filter results for messages that include a metadata key.
         :param str metadata_value: Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided.
         :param str status_code: Filter results by message status code.
-        :param str status: Filter results by message status.
+        :param str status: Filter results by message status. Can't be combined with statuses.
+        :param list[str] statuses: Filter results by message status. Can't be combined with status.
         :param int page: Page number for paging through paginated result sets.
         :param int page_size: Number of results to return in a page for paginated result sets.
         :param str sort_by: Field to sort results set by
@@ -447,7 +449,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'start_date', 'accounts', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'start_date', 'accounts', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'statuses', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -491,6 +493,10 @@ class MessagingReportsApi(object):
             raise ValueError("Invalid value for parameter `status` when calling `get_delivery_reports_detail`, length must be less than or equal to `15`")
         if 'status' in params and len(params['status']) < 1:
             raise ValueError("Invalid value for parameter `status` when calling `get_delivery_reports_detail`, length must be greater than or equal to `1`")
+        if 'statuses' in params and len(params['statuses']) > 15:
+            raise ValueError("Invalid value for parameter `statuses` when calling `get_delivery_reports_detail`, length must be less than or equal to `15`")
+        if 'statuses' in params and len(params['statuses']) < 1:
+            raise ValueError("Invalid value for parameter `statuses` when calling `get_delivery_reports_detail`, length must be greater than or equal to `1`")
         if 'page' in params and params['page'] < 1.0:
             raise ValueError("Invalid value for parameter `page` when calling `get_delivery_reports_detail`, must be a value greater than or equal to `1.0`")
         if 'page_size' in params and params['page_size'] > 100.0:
@@ -523,6 +529,8 @@ class MessagingReportsApi(object):
             query_params['status_code'] = params['status_code']
         if 'status' in params:
             query_params['status'] = params['status']
+        if 'statuses' in params:
+            query_params['statuses'] = params['statuses']
         if 'page' in params:
             query_params['page'] = params['page']
         if 'page_size' in params:
@@ -588,7 +596,7 @@ class MessagingReportsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
-        :param str group_by: Field to group results set by (required)
+        :param list[str] group_by: List of fields to group results set by (required)
         :param str start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
         :param str accounts: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
@@ -597,7 +605,8 @@ class MessagingReportsApi(object):
         :param str metadata_key: Filter results for messages that include a metadata key.
         :param str metadata_value: Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided.
         :param str status_code: Filter results by message status code.
-        :param str status: Filter results by message status.
+        :param str status: Filter results by message status. Can't be combined with statuses.
+        :param list[str] statuses: Filter results by message status. Can't be combined with status.
         :param str summary_by: Function to apply when summarising results
         :param str summary_field: Field to summarise results by
         :param str source_address_country: Filter results by source address country.
@@ -630,7 +639,7 @@ class MessagingReportsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
-        :param str group_by: Field to group results set by (required)
+        :param list[str] group_by: List of fields to group results set by (required)
         :param str start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
         :param str accounts: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
@@ -639,7 +648,8 @@ class MessagingReportsApi(object):
         :param str metadata_key: Filter results for messages that include a metadata key.
         :param str metadata_value: Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided.
         :param str status_code: Filter results by message status code.
-        :param str status: Filter results by message status.
+        :param str status: Filter results by message status. Can't be combined with statuses.
+        :param list[str] statuses: Filter results by message status. Can't be combined with status.
         :param str summary_by: Function to apply when summarising results
         :param str summary_field: Field to summarise results by
         :param str source_address_country: Filter results by source address country.
@@ -650,7 +660,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'group_by', 'start_date', 'accounts', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'summary_by', 'summary_field', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'group_by', 'start_date', 'accounts', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'statuses', 'summary_by', 'summary_field', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -697,6 +707,10 @@ class MessagingReportsApi(object):
             raise ValueError("Invalid value for parameter `status` when calling `get_delivery_reports_summary`, length must be less than or equal to `15`")
         if 'status' in params and len(params['status']) < 1:
             raise ValueError("Invalid value for parameter `status` when calling `get_delivery_reports_summary`, length must be greater than or equal to `1`")
+        if 'statuses' in params and len(params['statuses']) > 15:
+            raise ValueError("Invalid value for parameter `statuses` when calling `get_delivery_reports_summary`, length must be less than or equal to `15`")
+        if 'statuses' in params and len(params['statuses']) < 1:
+            raise ValueError("Invalid value for parameter `statuses` when calling `get_delivery_reports_summary`, length must be greater than or equal to `1`")
         if 'source_address' in params and len(params['source_address']) > 15:
             raise ValueError("Invalid value for parameter `source_address` when calling `get_delivery_reports_summary`, length must be less than or equal to `15`")
         if 'source_address' in params and len(params['source_address']) < 1:
@@ -723,6 +737,8 @@ class MessagingReportsApi(object):
             query_params['status_code'] = params['status_code']
         if 'status' in params:
             query_params['status'] = params['status']
+        if 'statuses' in params:
+            query_params['statuses'] = params['statuses']
         if 'summary_by' in params:
             query_params['summary_by'] = params['summary_by']
         if 'summary_field' in params:
@@ -1109,7 +1125,7 @@ class MessagingReportsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
-        :param str group_by: Field to group results set by (required)
+        :param list[str] group_by: List of fields to group results set by (required)
         :param str start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
         :param str accounts: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
@@ -1149,7 +1165,7 @@ class MessagingReportsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
-        :param str group_by: Field to group results set by (required)
+        :param list[str] group_by: List of fields to group results set by (required)
         :param str start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
         :param str accounts: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param str destination_address_country: Filter results by destination address country.
@@ -1300,7 +1316,8 @@ class MessagingReportsApi(object):
         :param str metadata_key: Filter results for messages that include a metadata key.
         :param str metadata_value: Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided.
         :param str status_code: Filter results by message status code.
-        :param str status: Filter results by message status.
+        :param str status: Filter results by message status. Can't be combined with statuses.
+        :param list[str] statuses: Filter results by message status. Can't be combined with status.
         :param int page: Page number for paging through paginated result sets.
         :param int page_size: Number of results to return in a page for paginated result sets.
         :param str sort_by: Field to sort results set by
@@ -1344,7 +1361,8 @@ class MessagingReportsApi(object):
         :param str metadata_key: Filter results for messages that include a metadata key.
         :param str metadata_value: Filter results for messages that include a metadata key containing this value. If this parameter is provided, the metadata_key parameter must also be provided.
         :param str status_code: Filter results by message status code.
-        :param str status: Filter results by message status.
+        :param str status: Filter results by message status. Can't be combined with statuses.
+        :param list[str] statuses: Filter results by message status. Can't be combined with status.
         :param int page: Page number for paging through paginated result sets.
         :param int page_size: Number of results to return in a page for paginated result sets.
         :param str sort_by: Field to sort results set by
@@ -1357,7 +1375,7 @@ class MessagingReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_date', 'start_date', 'accounts', 'delivery_report', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
+        all_params = ['end_date', 'start_date', 'accounts', 'delivery_report', 'destination_address_country', 'destination_address', 'message_format', 'metadata_key', 'metadata_value', 'status_code', 'status', 'statuses', 'page', 'page_size', 'sort_by', 'sort_direction', 'source_address_country', 'source_address', 'timezone']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1401,6 +1419,10 @@ class MessagingReportsApi(object):
             raise ValueError("Invalid value for parameter `status` when calling `get_sent_messages_detail`, length must be less than or equal to `15`")
         if 'status' in params and len(params['status']) < 1:
             raise ValueError("Invalid value for parameter `status` when calling `get_sent_messages_detail`, length must be greater than or equal to `1`")
+        if 'statuses' in params and len(params['statuses']) > 15:
+            raise ValueError("Invalid value for parameter `statuses` when calling `get_sent_messages_detail`, length must be less than or equal to `15`")
+        if 'statuses' in params and len(params['statuses']) < 1:
+            raise ValueError("Invalid value for parameter `statuses` when calling `get_sent_messages_detail`, length must be greater than or equal to `1`")
         if 'page' in params and params['page'] < 1.0:
             raise ValueError("Invalid value for parameter `page` when calling `get_sent_messages_detail`, must be a value greater than or equal to `1.0`")
         if 'page_size' in params and params['page_size'] > 100.0:
@@ -1435,6 +1457,8 @@ class MessagingReportsApi(object):
             query_params['status_code'] = params['status_code']
         if 'status' in params:
             query_params['status'] = params['status']
+        if 'statuses' in params:
+            query_params['statuses'] = params['statuses']
         if 'page' in params:
             query_params['page'] = params['page']
         if 'page_size' in params:
@@ -1500,7 +1524,7 @@ class MessagingReportsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
-        :param str group_by: Field to group results set by (required)
+        :param list[str] group_by: List of fields to group results set by (required)
         :param str start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
         :param str accounts: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param bool delivery_report: Filter results by delivery report.
@@ -1542,7 +1566,7 @@ class MessagingReportsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str end_date: End date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
-        :param str group_by: Field to group results set by (required)
+        :param list[str] group_by: List of fields to group results set by (required)
         :param str start_date: Start date time for report window. By default, the timezone for this parameter will be taken from the account settings for the account associated with the credentials used to make the request, or the account included in the Account parameter. This can be overridden using the timezone parameter per request. The date must be in the format of \"yyyy-MM-dd'T'HH:mm:ss\", e.g. \"2017-02-10T13:30:00\". (required)
         :param str accounts: Filter results by a specific account. By default results will be returned for the account associated with the authentication credentials and all sub accounts.
         :param bool delivery_report: Filter results by delivery report.

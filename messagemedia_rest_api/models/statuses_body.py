@@ -26,13 +26,13 @@ from six import iteritems
 import re
 
 
-class MessageStatusCode(object):
+class StatusesBody(object):
     """
     Do not edit the class manually.
     """
     def __init__(self):
         """
-        MessageStatusCode - a model
+        StatusesBody - a model
 
         :param dict types: The key is attribute name
                                   and the value is attribute type.

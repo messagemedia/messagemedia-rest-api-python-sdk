@@ -26,13 +26,13 @@ from six import iteritems
 import re
 
 
-class SummaryReportData(object):
+class SummaryReportItem(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, group=None, value=None):
+    def __init__(self, group=None, value=None, subgroups=None):
         """
-        SummaryReportData - a model
+        SummaryReportItem - a model
 
         :param dict types: The key is attribute name
                                   and the value is attribute type.
@@ -41,24 +41,27 @@ class SummaryReportData(object):
         """
         self.types = {
             'group': 'str',
-            'value': 'int'
+            'value': 'int',
+            'subgroups': 'list[SummaryReportItem]'
         }
 
         self.attribute_map = {
             'group': 'group',
-            'value': 'value'
+            'value': 'value',
+            'subgroups': 'subgroups'
         }
 
         self._group = group
         self._value = value
+        self._subgroups = subgroups
 
     @property
     def group(self):
         """
-        Gets the group of this SummaryReportData.
+        Gets the group of this SummaryReportItem.
 
 
-        :return: The group of this SummaryReportData.
+        :return: The group of this SummaryReportItem.
         :rtype: str
         """
         return self._group
@@ -66,10 +69,10 @@ class SummaryReportData(object):
     @group.setter
     def group(self, group):
         """
-        Sets the group of this SummaryReportData.
+        Sets the group of this SummaryReportItem.
 
 
-        :param group: The group of this SummaryReportData.
+        :param group: The group of this SummaryReportItem.
         :type: str
         """
 
@@ -78,10 +81,10 @@ class SummaryReportData(object):
     @property
     def value(self):
         """
-        Gets the value of this SummaryReportData.
+        Gets the value of this SummaryReportItem.
 
 
-        :return: The value of this SummaryReportData.
+        :return: The value of this SummaryReportItem.
         :rtype: int
         """
         return self._value
@@ -89,14 +92,37 @@ class SummaryReportData(object):
     @value.setter
     def value(self, value):
         """
-        Sets the value of this SummaryReportData.
+        Sets the value of this SummaryReportItem.
 
 
-        :param value: The value of this SummaryReportData.
+        :param value: The value of this SummaryReportItem.
         :type: int
         """
 
         self._value = value
+
+    @property
+    def subgroups(self):
+        """
+        Gets the subgroups of this SummaryReportItem.
+
+
+        :return: The subgroups of this SummaryReportItem.
+        :rtype: list[SummaryReportItem]
+        """
+        return self._subgroups
+
+    @subgroups.setter
+    def subgroups(self, subgroups):
+        """
+        Sets the subgroups of this SummaryReportItem.
+
+
+        :param subgroups: The subgroups of this SummaryReportItem.
+        :type: list[SummaryReportItem]
+        """
+
+        self._subgroups = subgroups
 
     def to_dict(self):
         """

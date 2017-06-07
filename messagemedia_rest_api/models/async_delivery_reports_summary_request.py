@@ -30,7 +30,7 @@ class AsyncDeliveryReportsSummaryRequest(object):
     """
     Do not edit the class manually.
     """
-    def __init__(self, summary_by=None, summary_field=None, group_by=None, start_date=None, end_date=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, source_address_country=None, source_address=None, status=None, status_code=None, delivery_options=None):
+    def __init__(self, summary_by=None, summary_field=None, group_by=None, start_date=None, end_date=None, timezone=None, accounts=None, destination_address_country=None, destination_address=None, message_format=None, metadata_key=None, metadata_value=None, source_address_country=None, source_address=None, status=None, statuses=None, status_code=None, delivery_options=None):
         """
         AsyncDeliveryReportsSummaryRequest - a model
 
@@ -42,7 +42,7 @@ class AsyncDeliveryReportsSummaryRequest(object):
         self.types = {
             'summary_by': 'SummaryByBody',
             'summary_field': 'SummaryFieldBody',
-            'group_by': 'str',
+            'group_by': 'list[str]',
             'start_date': 'StartDateBody',
             'end_date': 'EndDateBody',
             'timezone': 'TimezoneBody',
@@ -55,6 +55,7 @@ class AsyncDeliveryReportsSummaryRequest(object):
             'source_address_country': 'SourceAddressCountryBody',
             'source_address': 'SourceAddressBody',
             'status': 'StatusBody',
+            'statuses': 'StatusesBody',
             'status_code': 'StatusCodeBody',
             'delivery_options': 'DeliveryOptionsBody'
         }
@@ -75,6 +76,7 @@ class AsyncDeliveryReportsSummaryRequest(object):
             'source_address_country': 'source_address_country',
             'source_address': 'source_address',
             'status': 'status',
+            'statuses': 'statuses',
             'status_code': 'status_code',
             'delivery_options': 'delivery_options'
         }
@@ -94,6 +96,7 @@ class AsyncDeliveryReportsSummaryRequest(object):
         self._source_address_country = source_address_country
         self._source_address = source_address
         self._status = status
+        self._statuses = statuses
         self._status_code = status_code
         self._delivery_options = delivery_options
 
@@ -147,10 +150,10 @@ class AsyncDeliveryReportsSummaryRequest(object):
     def group_by(self):
         """
         Gets the group_by of this AsyncDeliveryReportsSummaryRequest.
-        Field to group results set by
+        List of fields to group results set by
 
         :return: The group_by of this AsyncDeliveryReportsSummaryRequest.
-        :rtype: str
+        :rtype: list[str]
         """
         return self._group_by
 
@@ -158,12 +161,12 @@ class AsyncDeliveryReportsSummaryRequest(object):
     def group_by(self, group_by):
         """
         Sets the group_by of this AsyncDeliveryReportsSummaryRequest.
-        Field to group results set by
+        List of fields to group results set by
 
         :param group_by: The group_by of this AsyncDeliveryReportsSummaryRequest.
-        :type: str
+        :type: list[str]
         """
-        allowed_values = ["DAY", "DESTINATION_ADDRESS", "DESTINATION_ADDRESS_COUNTRY", "FORMAT", "HOUR", "METADATA_KEY", "METADATA_VALUE", "MINUTE", "MONTH", "SOURCE_ADDRESS", "SOURCE_ADDRESS_COUNTRY", "STATUS", "STATUS_CODE", "YEAR"]
+        allowed_values = ["DAY", "DESTINATION_ADDRESS", "DESTINATION_ADDRESS_COUNTRY", "FORMAT", "HOUR", "METADATA_KEY", "METADATA_VALUE", "MINUTE", "MONTH", "SOURCE_ADDRESS", "SOURCE_ADDRESS_COUNTRY", "STATUS", "STATUS_CODE", "YEAR", "ACCOUNT"]
         if group_by not in allowed_values:
             raise ValueError(
                 "Invalid value for `group_by` ({0}), must be one of {1}"
@@ -447,6 +450,29 @@ class AsyncDeliveryReportsSummaryRequest(object):
         """
 
         self._status = status
+
+    @property
+    def statuses(self):
+        """
+        Gets the statuses of this AsyncDeliveryReportsSummaryRequest.
+
+
+        :return: The statuses of this AsyncDeliveryReportsSummaryRequest.
+        :rtype: StatusesBody
+        """
+        return self._statuses
+
+    @statuses.setter
+    def statuses(self, statuses):
+        """
+        Sets the statuses of this AsyncDeliveryReportsSummaryRequest.
+
+
+        :param statuses: The statuses of this AsyncDeliveryReportsSummaryRequest.
+        :type: StatusesBody
+        """
+
+        self._statuses = statuses
 
     @property
     def status_code(self):
